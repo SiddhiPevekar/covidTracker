@@ -1,0 +1,88 @@
+{% extends 'information/base.html' %} {% load static %} {% block title %}Supplier Homepage{% endblock title %} {% block content %}
+ {% for j in supplier %}
+<div class="row d-flex justify-content-center align-items-center">
+    <nav class="navbar sticky-top navbar-light">
+        <div class="container justify-content-end">
+            <a href="{% url 'logout_user' %}" style="background-color: #2222af; padding: 13px 30px; border: none; font-size: 18px; border-radius: 30px; color: white; font-family: 'Hind Siliguri', sans-serif; margin-left: 10px; text-decoration: none;">Logout</a>
+        </div>
+        <div class="container justify-content-start">
+            <h3>{{supplier_data}}</h3><br>
+            <h3>{{j.s_govcode}}</h3>
+        </div>
+    </nav>
+</div>
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-md-7 col-lg-7 col-12 col-xxl-7">
+        <form action="{% url 'update_supplier' %}" method="post">
+            {% csrf_token %}
+            <!--action path('supplier_home.html', views.s_loginpage, name="supplier_homepage"),-->
+            <div class="row mb-3">
+                <label for="s_agency_name" class="col-sm-2 col-form-label">Agency Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="s_agency_name" name="s_agency_name" value="{{j.s_agency_name}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="s_emailid" class="col-sm-2 col-form-label">Email Id</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="s_emailid" name="s_emailid" value="{{j.s_emailid}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="s_state" class="col-sm-2 col-form-label">State</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="s_state" name="s_state" value="{{j.s_state}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="s_district" class="col-sm-2 col-form-label">District</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="s_district" name="s_district" value="{{j.s_district}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="icu_beds" class="col-sm-2 col-form-label">ICU Beds</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="icu_beds" name="icu_beds" value="{{j.icu_beds}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="ventilator_beds" class="col-sm-2 col-form-label">Ventilator Beds</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="ventilator_beds" name="ventilator_beds" value="{{j.ventilator_beds}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="icu_ventilator_beds" class="col-sm-2 col-form-label">ICU+Ventilator Beds</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="icu_ventilator_beds" name="icu_ventilator_beds" value="{{j.icu_ventilator_beds}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="oxygen" class="col-sm-2 col-form-label">Oxygen Availability</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="oxygen" name="oxygen" value="{{j.oxygen}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="s_password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="s_password" name="s_password" value="{{j.s_password}}">
+                </div>
+            </div>
+            <button type="submit" class="btn" style="background: #2222af; color: white;">Update</button>
+
+        </form>
+        {% comment %} {{ j.s_agency_name }}<br> {{ j.s_emailid }}<br> {{ j.s_state}}<br> {{ j.s_district}}<br> {{ j.icu_beds}}<br> {{ j.ventilator_beds}}<br> {{ j.icu_ventilator_beds}}<br> {{ j.oxygen}}<br> {% endcomment %} 
+        
+        {% endfor %}
+
+    </div>
+    <div class="col-md-5 col-lg-5 col-12 col-xxl-5 d-flex justify-content-center align-items-center">
+        <figure>
+            <!--html5 says that when images are placed in fig they are arranged properly-->
+            <img src="{% static 'information/assets/img/supplier_homepage.png' %}" class="img-fluid" style="width: 700px; min-height: 100;">
+        </figure>
+    </div>
+</div>
+{% endblock content %}

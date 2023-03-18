@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--hind siliguri-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&display=swap" rel="stylesheet">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!--fontawesome cdn for icons from font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'information/bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!--Cdn for bootstrap5 datatable https://datatables.net/-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+    <title>{% block title %}{% endblock title %} </title>
+
+    <style>
+        input[type="text"],
+        textarea {
+            outline: none;
+            box-shadow: none !important;
+            border: none;
+            border-radius: 0px;
+            border-bottom: 3px #2222af solid !important;
+        }
+        
+        input[type="email"],
+        textarea {
+            outline: none;
+            box-shadow: none !important;
+            border: none;
+            border-radius: 0px;
+            border-bottom: 3px #2222af solid !important;
+        }
+        
+        input[type="password"],
+        textarea {
+            outline: none;
+            box-shadow: none !important;
+            border: none;
+            border-radius: 0px;
+            border-bottom: 3px #2222af solid !important;
+        }
+        
+        form .form-select {
+            border-bottom: 3px #2222af solid !important;
+            outline: none;
+            box-shadow: none !important;
+            border: none;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+        {% block content %} {% endblock content %}
+        <!--#2222af dark purple
+            #cf2323 dark red
+            #fb7267 red
+            #5050ee purple
+        -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="{% static 'information/bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js' %}" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <!--Cdn for bootstrap5 datatable-->
+    <script src="https://cdn.datatables.net/1.10.14/js/jquery.dataTables.min.js"></script>
+    <script src="{% static 'website/assets/js/main.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.myTable').DataTable();
+        });
+    </script>
+
+
+</body>
+
+</html>

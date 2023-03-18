@@ -1,0 +1,62 @@
+{% extends 'information/base.html' %} {% load static %} {% block title %}Requirements Booking{% endblock title %} {% block content %}
+<!-- <h1>book now </h1>
+    {% for j in s_gov_id %}
+    <h1>{{j.s_agency_name}}</h1>
+    {% endfor %} -->
+{% for p in current_patient %} {% for s in s_gov_id %}
+<div class="row d-flex justify-content-center align-items-center">
+    <nav class="navbar sticky-top navbar-light">
+        <div class="container justify-content-end">
+            <a href="{% url 'logout_user' %}" style="background-color: #2222af; padding: 13px 30px; border: none; font-size: 18px; border-radius: 30px; color: white; font-family: 'Hind Siliguri', sans-serif; margin-left: 10px; text-decoration: none;">Logout</a>
+        </div>
+    </nav>
+</div>
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-md-7 col-lg-7 col-12 col-xxl-7">
+        <form action="{% url 'book' %}" method="post">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <label for="patient">Username</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="patient" name="patient" placeholder="Choose a unique username" value="{{p.p_username}}" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="supplier">Hospital Name</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="supplier" name="supplier" placeholder="Choose a unique username" value="{{s.s_agency_name}}" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="bed">Bed</label>
+                <div class="col-sm-9">
+                    <select class="form-select" aria-label="Default select example" name="bed">
+                        <option selected>Open this select menu</option>
+                        <option value="ICU">ICU bed</option>
+                        <option value="Ventilator">Ventilator bed</option>
+                        <option value="ICU+Ventilator">ICU+Ventilator bed</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="oxygen">Oxygen</label>
+                <div class="col-sm-9">
+                    <select class="form-select" aria-label="Default select example" name="oxygen">
+                        <option selected>Open this select menu</option>
+                        <option value="cylinder">Oxygen Cylinder</option>
+                        <option value="refill">Oxygen Cylinder Refill</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn" style="background: #2222af; color: white; margin-top: 10px;" type="submit">Book</button>
+        </form>
+    </div>
+    <div class="col-md-5 col-lg-5 col-12 col-xxl-5 d-flex justify-content-center align-items-center">
+        <figure>
+            <!--html5 says that when images are placed in fig they are arranged properly-->
+            <img src="{% static 'information/assets/img/supplier.png' %}" class="img-fluid" style="width: 900px; min-height: 100%;">
+        </figure>
+    </div>
+</div>
+{% endfor %} {% endfor %} {% endblock %}

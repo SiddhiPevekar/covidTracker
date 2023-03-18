@@ -1,0 +1,67 @@
+{% extends 'information/base.html' %} 
+{% load static %} 
+{% block title %}Patient Profile{% endblock title %} 
+{% block content %} 
+{% for j in patient %}
+<div class="row d-flex justify-content-center align-items-center">
+    <nav class="navbar sticky-top navbar-light">
+        <div class="container justify-content-end">
+            <a href="{% url 'logout_user' %}" style="background-color: #2222af; padding: 13px 30px; border: none; font-size: 18px; border-radius: 30px; color: white; font-family: 'Hind Siliguri', sans-serif; margin-left: 10px; text-decoration: none;">Logout</a>            
+        </div>
+    </nav>
+</div>
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-md-7 col-lg-7 col-12 col-xxl-7">
+        <form action="{% url 'update_patient' %}" method="post">
+            {% csrf_token %}
+            <!--action path('supplier_home.html', views.s_loginpage, name="supplier_homepage"),-->
+            <div class="row mb-3">
+                <label for="p_username" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="p_username" name="p_username" value="{{j.p_username}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="p_firstname" class="col-sm-2 col-form-label">Patient FirstName</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="p_firstname" name="p_firstname" value="{{j.p_firstname}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="p_lastname" class="col-sm-2 col-form-label">Patient LastName</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="p_lastname" name="p_lastname" value="{{j.p_lastname}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="p_emailid" class="col-sm-2 col-form-label">Patient EmailId</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="p_emailid" name="p_emailid" value="{{j.p_emailid}}">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="p_pass1" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="p_pass1" name="p_pass1" value="{{j.p_pass1}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="p_pass2" class="col-sm-2 col-form-label">Re-enter the password</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="p_pass2" name="p_pass2" value="{{j.p_pass2}}">
+                </div>
+            </div>
+
+            <button type="submit" style="background: #2222af; color: white;" class="btn">Update</button>
+        </form>
+    </div>
+    <div class="col-md-5 col-lg-5 col-12 col-xxl-5 d-flex justify-content-center align-items-center">
+        <figure>
+            <!--html5 says that when images are placed in fig they are arranged properly-->
+            <img src="{% static 'information/assets/img/patient_bed.png' %}" class="img-fluid" style="width: 700px; min-height: 100;">
+        </figure>
+    </div>
+</div>
+{% endfor %} 
+{% endblock content %}

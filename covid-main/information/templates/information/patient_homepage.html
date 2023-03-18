@@ -1,0 +1,199 @@
+{% extends 'information/base.html' %} {% load static %} {% block title %}Patient Homepage{% endblock title %} {% block content %}
+
+{% comment %} <header class="py-3 mb-4 border-bottom shadow">
+    <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+        <div>
+            <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+                <i class="bi bi-bootstrap fs-2 text-dark"></i>
+            </a>
+        </div>
+        <div class="d-flex align-items-center">
+            <form class="w-100 me-3">
+                <input type="search" class="form-control" placeholder="Search...">
+            </form>
+            <div class="flex-shrink-0 dropdown">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://via.placeholder.com/28?text=!" alt="user" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header> {% endcomment %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+<main class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
+    <div class="row flex-grow-sm-1 flex-grow-0">
+        <div class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
+            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                <h6 class="d-none d-sm-block text-muted">Sticky Sidebar</h6>
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-truncate">
+                            <i class="bi bi-house fs-4"></i>
+                            <span class="d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate">
+                            <i class="bi bi-speedometer fs-4"></i>
+                            <span class="d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-card-text fs-4"></i>
+                            <span class="d-none d-sm-inline">Orders</span> </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-bricks fs-4"></i>
+                            <span class="d-none d-sm-inline">Products</span> </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-people fs-4"></i>
+                            <span class="d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col overflow-auto h-100">
+            <div class="bg-light border rounded-3 p-3">
+                <h2>Main</h2>
+                <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation. Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
+                <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of them, vegan farm-to-table Williamsburg slow-carb readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies, forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
+                <hr />
+                <h4>More content...</h4>
+                <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of them, vegan farm-to-table Williamsburg slow-carb readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies, forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
+                <hr />
+                <h4>More content...</h4>
+                <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation. Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<!-- <a href="{% url 'profile_patient' %}">View Profile</a>
+<a href="{% url 'logout_user' %}">Logout</a> -->
+
+{% comment %} <div class="row d-flex justify-content-center align-items-center">
+    <nav class="navbar sticky-top navbar-light" style="margin-top: 10px;">
+        <div class="container justify-content-end">
+            <!-- <a class="navbar-brand" href="{% url 'profile_patient' %}">View Profile</a>
+      <a class="navbar-brand" href="{% url 'logout_user' %}">Logout</a> -->
+            <a href="{% url 'profile_patient' %}" style="background: #fb7267; padding: 13px 30px; border: none; color: white; font-size: 18px; border-radius: 30px; font-family: 'Hind Siliguri', sans-serif; text-decoration: none;">View Profile</a>
+            <a href="{% url 'logout_user' %}" style="background: #fb7267; padding: 13px 30px; border: none; color: white; font-size: 18px; border-radius: 30px; font-family: 'Hind Siliguri', sans-serif; margin-left: 10px; text-decoration: none;">Logout</a>
+        </div>
+    </nav>
+</div> {% endcomment %}
+
+{% comment %} <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-md-12 col-lg-12 col-12 col-xxl-12">
+        <table class="table table-striped table-bordered myTable" style="width: 100%; margin-top: 10px;">
+            <thead>
+                <tr style="background: #fb7267; color: white; font-size: 18px; font-family: 'Hind Siliguri', sans-serif;">
+                    <th>Hospital/ Agency Name</th>
+                    <th>No. of ICU beds</th>
+                    <th>No. of Ventilator beds</th>
+                    <th>No. of ICU+Ventilator beds</th>
+                    <th>Oxygen Availablility</th>
+                    <th>Locality</th>
+                    <th>More Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for supp in supplier_info %}
+                <tr style="font-size: 16px; font-family: sans-serif;">
+                    <td>{{supp.s_agency_name}}</td>
+                    <td>{{supp.icu_beds}}</td>
+                    <td>{{supp.ventilator_beds}}</td>
+                    <td>{{supp.icu_ventilator_beds}}</td>
+                    <td>{{supp.oxygen}}</td>
+                    <td>{{supp.s_state}}, {{supp.s_district}}</td>
+                    <td>
+                        <p data-bs-toggle="modal" data-bs-target="#details{{supp.s_id}}"><i class="far fa-eye"></i></p>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div> {% endcomment %}
+
+
+<!-- Modal Details-->
+{% comment %} {% for supp in supplier_info %}
+<div class="modal fade" id="details{{supp.s_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalTitle">{{supp.s_agency_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered myTable" style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>Hospital/ Agency Name</td>
+                            <td>{{supp.s_agency_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>No. of available ICU Beds</td>
+                            <td>{{supp.icu_beds}}</td>
+                        </tr>
+                        <tr>
+                            <td>No. of available Ventilator Beds</td>
+                            <td>{{supp.ventilator_beds}}</td>
+                        </tr>
+                        <tr>
+                            <td>No. of available ICU+Ventilator Beds</td>
+                            <td>{{supp.icu_ventilator_beds}}</td>
+                        </tr>
+                        <tr>
+                            <td>Is Oxygen Cylinder available?</td>
+                            <td>{{supp.oxygen}}</td>
+                        </tr>
+                        <tr>
+                            <td>States where the services are provided</td>
+                            <td>{{supp.s_state}}</td>
+                        </tr>
+                        <tr>
+                            <td>Districts where the services are provided</td>
+                            <td>{{supp.s_district}}</td>
+                        </tr>
+                        <tr>
+                            <td>Contact us at</td>
+                            <td>{{supp.s_emailid}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <form action="{% url 'book_now' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="enter the hospital code" id="s_govcode" name="s_govcode" value={{supp.s_govcode}} style="border-bottom: 3px #fb7267 solid !important;">
+                    <button type="submit" class="btn" style="background: #fb7267;">Book now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}  {% endcomment %}
+{% endblock content%}
